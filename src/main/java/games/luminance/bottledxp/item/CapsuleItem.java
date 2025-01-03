@@ -11,6 +11,7 @@ import net.minecraft.world.level.Level;
 import games.luminance.bottledxp.openmods.utils.EnchantmentUtils;
 
 import static games.luminance.bottledxp.Config.maxXP;
+import static games.luminance.bottledxp.Config.showXPInName;
 
 public class CapsuleItem extends Item {
     public CapsuleItem(Properties properties) {
@@ -32,7 +33,7 @@ public class CapsuleItem extends Item {
             pPlayer.getItemInHand(pUsedHand).setCount(pPlayer.getItemInHand(pUsedHand).getCount() - 1);
             ItemStack itemStack = new ItemStack(ModItems.FILLED_CAPSULE.get());
             itemStack.getOrCreateTag().putInt("stored_xp", xp);
-            itemStack.setHoverName(Component.literal("Filled Experience Capsule (" + xp + " XP)"));
+            if (showXPInName) { itemStack.setHoverName(Component.literal("Filled Experience Capsule (" + xp + " XP)")); }
             pPlayer.sendSystemMessage(Component.literal("Stored " + xp + " XP in a capsule"));
 
             pPlayer.giveExperiencePoints((-1 * xp));
