@@ -1,6 +1,8 @@
 {
   "pack": {
-    "description": "bottled_xp resources",
+    "description": {
+      "text": "${mod_id} resources"
+    },
     "pack_format": 15
   }
 }
