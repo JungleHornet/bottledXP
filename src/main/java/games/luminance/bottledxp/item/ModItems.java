@@ -15,6 +15,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> FILLED_CAPSULE = ITEMS.register("filled_capsule", () -> new FilledCapsuleItem(new Item.Properties().rarity(Rarity.RARE).stacksTo(1).setNoRepair()));
 
+    public static final RegistryObject<Item> ADVANCED_CAPSULE = ITEMS.register("advanced_capsule", () -> new AdvancedCapsuleItem(new Item.Properties().rarity(Rarity.RARE).setNoRepair()));
+
+    public static final RegistryObject<Item> FILLED_ADVANCED_CAPSULE = ITEMS.register("filled_advanced_capsule", () -> new FilledAdvancedCapsuleItem(new Item.Properties().rarity(Rarity.RARE).stacksTo(1).setNoRepair()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
