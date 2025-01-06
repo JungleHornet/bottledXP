@@ -39,7 +39,7 @@ public class FilledCapsuleItem extends Item {
             }
             pPlayer.level().addFreshEntity(new ExperienceOrb(pPlayer.level(), pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), itemStack.getOrCreateTag().getInt("stored_xp")));
         }
-        pPlayer.getItemInHand(pUsedHand).setCount(0);
+        pPlayer.getItemInHand(pUsedHand).setCount(pPlayer.getItemInHand(pUsedHand).getCount() - 1);
         pPlayer.addItem(new ItemStack(ModItems.XP_CAPSULE.get()));
 
 
