@@ -1,6 +1,4 @@
 {
   "item.bottledxp.capsule": "XP Capsule",
-  "item.bottledxp.filled_capsule": "Filled XP Capsule",
-  "item.bottledxp.advanced_capsule": "Advanced XP Capsule",
-  "item.bottledxp.filled_advanced_capsule": "Filled Advanced XP Capsule"
+  "item.bottledxp.filled_capsule": "Filled XP Capsule"
 }
