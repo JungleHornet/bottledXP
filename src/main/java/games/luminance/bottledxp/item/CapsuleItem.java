@@ -30,14 +30,21 @@ public class CapsuleItem extends Item {
                 xp = maxXP;
             }
 
-            pPlayer.getItemInHand(pUsedHand).setCount(pPlayer.getItemInHand(pUsedHand).getCount() - 1);
+
+            pPlayer.getItemInHand(pUsedHand).shrink(1);
             ItemStack itemStack = new ItemStack(ModItems.FILLED_CAPSULE.get());
             itemStack.getOrCreateTag().putInt("stored_xp", xp);
             if (showXPInName) { itemStack.setHoverName(Component.literal("Filled XP Capsule (" + xp + " XP)")); }
             pPlayer.sendSystemMessage(Component.literal("Stored " + xp + " XP in a capsule"));
 
             pPlayer.giveExperiencePoints((-1 * xp));
-            pPlayer.addItem(itemStack);
+
+            if (pPlayer.getInventory().getSlotWithRemainingSpace(itemStack) != -1) {
+                pPlayer.addItem(itemStack);
+            } else {
+                pPlayer.drop(itemStack, false);
+            }
+
         }
         return InteractionResultHolder.consume(pPlayer.getItemInHand(pUsedHand));
     }

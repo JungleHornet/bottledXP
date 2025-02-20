@@ -29,7 +29,7 @@ public class AdvancedCapsuleItem extends Item {
                 xp = maxXP;
             }
 
-            pPlayer.getItemInHand(pUsedHand).setCount(pPlayer.getItemInHand(pUsedHand).getCount() - 1);
+            pPlayer.getItemInHand(pUsedHand).shrink(1);
             ItemStack itemStack = new ItemStack(ModItems.FILLED_ADVANCED_CAPSULE.get());
             itemStack.getOrCreateTag().putInt("stored_xp", xp);
             if (showXPInName) { itemStack.setHoverName(Component.literal("Filled Advanced XP Capsule (" + xp + " XP)")); }

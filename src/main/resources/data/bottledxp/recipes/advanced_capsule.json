@@ -8,10 +8,10 @@
   ],
   "key": {
     "I": {
-      "item": "minecraft:iron_block"
+      "item": "minecraft:iron_ingot"
     },
     "R": {
-      "item": "minecraft:redstone_block"
+      "item": "minecraft:redstone"
     },
     "C": {
       "item": "bottledxp:capsule"
