@@ -2,5 +2,13 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "bottledxp:item/advanced_capsule"
-  }
+  },
+    "overrides": [
+        {
+        "predicate": {
+            "bottledxp:has_xp": 1
+        },
+        "model": "bottledxp:item/filled_advanced_capsule"
+        }
+    ]
 }

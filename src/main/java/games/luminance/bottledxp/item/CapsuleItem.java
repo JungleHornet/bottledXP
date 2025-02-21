@@ -39,13 +39,15 @@ public class CapsuleItem extends Item {
 
             pPlayer.giveExperiencePoints((-1 * xp));
 
-            if (pPlayer.getInventory().getSlotWithRemainingSpace(itemStack) != -1) {
+            if (pPlayer.getInventory().findSlotMatchingItem(itemStack) != -1) {
                 pPlayer.addItem(itemStack);
             } else {
+                System.out.println(pPlayer.getInventory().findSlotMatchingItem(itemStack));
                 pPlayer.drop(itemStack, false);
             }
 
         }
         return InteractionResultHolder.consume(pPlayer.getItemInHand(pUsedHand));
     }
+
 }

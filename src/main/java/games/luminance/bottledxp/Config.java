@@ -21,7 +21,7 @@ public class Config
 
     private static final ForgeConfigSpec.IntValue MAX_XP = BUILDER
             .comment("The maximum amount of XP that can be stored in a capsule. \nDefault value is 1395, which is the amount of XP required to reach level 30.")
-            .defineInRange("maxXP", 1395, 0, Integer.MAX_VALUE);
+            .defineInRange("maxXP", 1395, -1, Integer.MAX_VALUE);
 
     private static final ForgeConfigSpec.BooleanValue SHOW_XP_IN_NAME = BUILDER
             .comment("Whether or not to show the amount of XP stored in a capsule in the name of item. \nIf disabled, stored XP will still be shown when hovering over the item in the inventory. \nDefault: true")
@@ -39,6 +39,9 @@ public class Config
     static void onLoad(final ModConfigEvent event)
     {
         maxXP = MAX_XP.get();
+        if (maxXP < 0) {
+            maxXP = Integer.MAX_VALUE;
+        }
         showXPInName = SHOW_XP_IN_NAME.get();
     }
 }

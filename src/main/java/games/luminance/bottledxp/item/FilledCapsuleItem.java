@@ -41,7 +41,7 @@ public class FilledCapsuleItem extends Item {
         }
         pPlayer.getItemInHand(pUsedHand).shrink(1);
         itemStack = new ItemStack(ModItems.XP_CAPSULE.get());
-        if (pPlayer.getInventory().getSlotWithRemainingSpace(itemStack) != -1) {
+        if (pPlayer.getInventory().findSlotMatchingItem(itemStack) != -1) {
             pPlayer.addItem(itemStack);
         } else {
             pPlayer.drop(itemStack, false);
