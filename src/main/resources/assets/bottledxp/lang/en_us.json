@@ -2,9 +2,15 @@
   "item.bottledxp.capsule": "XP Capsule",
   "item.bottledxp.filled_capsule": "Filled XP Capsule",
   "item.bottledxp.advanced_capsule": "Advanced XP Capsule",
+  "item.bottledxp.filled_advanced_capsule": "Filled Advanced XP Capsule",
+
+
   "gui.bottledxp.advanced_capsule_gui.title": "Advanced XP Capsule",
   "gui.bottledxp.advanced_capsule_gui.store": "Store",
   "gui.bottledxp.advanced_capsule_gui.get": "Get",
   "gui.bottledxp.advanced_capsule_gui.stored_xp": "Stored XP: ",
-  "item.bottledxp.filled_advanced_capsule": "Filled Advanced XP Capsule"
+  "gui.bottledxp.advanced_capsule_gui.user_message_got": "Got %d XP from an advanced capsule",
+  "gui.bottledxp.advanced_capsule_gui.user_message_stored": "Stored %d XP in an advanced capsule",
+  "gui.bottledxp.advanced_capsule_gui.log_message_got": "Retrieved %d XP",
+  "gui.bottledxp.advanced_capsule_gui.log_message_stored": "Stored %d XP"
 }

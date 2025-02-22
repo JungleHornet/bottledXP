@@ -5,6 +5,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -39,15 +40,13 @@ public class FilledCapsuleItem extends Item {
             }
             pPlayer.level().addFreshEntity(new ExperienceOrb(pPlayer.level(), pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), itemStack.getOrCreateTag().getInt("stored_xp")));
         }
-        pPlayer.getItemInHand(pUsedHand).shrink(1);
+        itemStack.shrink(1);
         itemStack = new ItemStack(ModItems.XP_CAPSULE.get());
-        if (pPlayer.getInventory().findSlotMatchingItem(itemStack) != -1) {
+        if (pPlayer.getInventory().getSlotWithRemainingSpace(itemStack) != -1 || pPlayer.getInventory().getFreeSlot() != -1) {
             pPlayer.addItem(itemStack);
         } else {
             pPlayer.drop(itemStack, false);
         }
-
-
         return InteractionResultHolder.consume(pPlayer.getItemInHand(pUsedHand));
     }
 }

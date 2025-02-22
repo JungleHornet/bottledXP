@@ -30,7 +30,6 @@ public class CapsuleItem extends Item {
                 xp = maxXP;
             }
 
-
             pPlayer.getItemInHand(pUsedHand).shrink(1);
             ItemStack itemStack = new ItemStack(ModItems.FILLED_CAPSULE.get());
             itemStack.getOrCreateTag().putInt("stored_xp", xp);
@@ -39,7 +38,7 @@ public class CapsuleItem extends Item {
 
             pPlayer.giveExperiencePoints((-1 * xp));
 
-            if (pPlayer.getInventory().findSlotMatchingItem(itemStack) != -1) {
+            if (pPlayer.getInventory().getSlotWithRemainingSpace(itemStack) != -1 || pPlayer.getInventory().getFreeSlot() != -1) {
                 pPlayer.addItem(itemStack);
             } else {
                 System.out.println(pPlayer.getInventory().findSlotMatchingItem(itemStack));
